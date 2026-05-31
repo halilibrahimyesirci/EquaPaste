@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# WXT
+.wxt/
+.output/
+stats.html
+web-ext.config.ts
+
+# Build / test artifacts
+dist/
+test-results/
+playwright-report/
+*.zip
+*.xpi
+
+# Editor / OS
+.DS_Store
+*.log
+.idea/
+.vscode/*
+!.vscode/extensions.json

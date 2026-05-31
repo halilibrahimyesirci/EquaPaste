@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EquaPaste — Word clipboard test harness</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f7f8fa;
+        --card: #ffffff;
+        --text: #15181f;
+        --muted: #6b7280;
+        --border: #e2e5ec;
+        --accent: #343a47;
+        --focus: #5b6cff;
+        --ok: #1fa463;
+        --ok-bg: #e7f6ee;
+        --err: #d64545;
+        font-family:
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #15181f;
+          --card: #222632;
+          --text: #f7f8fa;
+          --muted: #9aa1b1;
+          --border: #2a2f3b;
+          --accent: #e2e5ec;
+          --ok: #34d08a;
+          --ok-bg: #0f2a1e;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        padding: 32px 20px 64px;
+        line-height: 1.5;
+      }
+      main {
+        max-width: 860px;
+        margin: 0 auto;
+      }
+      h1 {
+        font-size: 22px;
+        margin: 0 0 4px;
+      }
+      p.lede {
+        color: var(--muted);
+        margin: 0 0 24px;
+        font-size: 14px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      label {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+        display: block;
+        margin-bottom: 6px;
+      }
+      textarea,
+      input[type='text'] {
+        width: 100%;
+        font-family: ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace;
+        font-size: 14px;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--bg);
+        color: var(--text);
+        resize: vertical;
+      }
+      textarea:focus,
+      input:focus {
+        outline: 2px solid var(--focus);
+        outline-offset: 1px;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 12px;
+      }
+      button {
+        font-size: 13px;
+        font-weight: 600;
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--text);
+        cursor: pointer;
+      }
+      button.primary {
+        background: var(--accent);
+        color: var(--bg);
+        border-color: var(--accent);
+      }
+      button:focus-visible {
+        outline: 2px solid var(--focus);
+        outline-offset: 2px;
+      }
+      .chips button {
+        font-weight: 500;
+        font-family: ui-monospace, monospace;
+        font-size: 12px;
+      }
+      pre {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 12px;
+        overflow-x: auto;
+        font-size: 12px;
+        white-space: pre-wrap;
+        word-break: break-word;
+        margin: 8px 0 0;
+        max-height: 180px;
+      }
+      .status {
+        min-height: 20px;
+        font-size: 13px;
+        margin-top: 12px;
+        font-weight: 600;
+      }
+      .status.ok {
+        color: var(--ok);
+      }
+      .status.err {
+        color: var(--err);
+      }
+      fieldset {
+        border: 0;
+        padding: 0;
+        margin: 12px 0 0;
+        display: flex;
+        gap: 16px;
+      }
+      legend {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      code {
+        font-family: ui-monospace, monospace;
+        background: var(--bg);
+        padding: 1px 5px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="app"></main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

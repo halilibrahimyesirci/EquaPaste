@@ -1,0 +1,54 @@
+/* EquaPaste design tokens — Neutral Graphite.
+   Scoped to .ep-root so it works inside a content-script shadow root. The page
+   chrome (popup/options/onboarding) re-declares the same tokens with a
+   prefers-color-scheme media query (see ui/page.css). */
+
+.ep-root {
+  --ep-bg: #ffffff;
+  --ep-bg-subtle: #f7f8fa;
+  --ep-border: #e2e5ec;
+  --ep-border-strong: #cbd0da;
+  --ep-text: #15181f;
+  --ep-text-muted: #6b7280;
+  --ep-accent: #343a47; /* graphite */
+  --ep-accent-hover: #222632;
+  --ep-on-accent: #ffffff;
+  --ep-focus: #5b6cff; /* restrained blue focus */
+  --ep-success-fg: #1fa463;
+  --ep-success-bg: #e7f6ee;
+  --ep-danger: #d64545;
+  --ep-overlay: rgba(12, 14, 19, 0.06);
+  --ep-highlight: rgba(52, 58, 71, 0.08);
+  --ep-highlight-border: rgba(52, 58, 71, 0.5);
+  --ep-shadow-1: 0 1px 2px rgba(12, 14, 19, 0.12), 0 1px 1px rgba(12, 14, 19, 0.06);
+  --ep-shadow-2: 0 6px 20px rgba(12, 14, 19, 0.16), 0 2px 6px rgba(12, 14, 19, 0.08);
+
+  --ep-font:
+    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+  --ep-r-sm: 6px;
+  --ep-r-md: 10px;
+  --ep-r-pill: 999px;
+  --ep-dur-fast: 120ms;
+  --ep-dur-base: 180ms;
+  --ep-ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ep-root[data-ep-theme='dark'] {
+  --ep-bg: #222632;
+  --ep-bg-subtle: #2a2f3b;
+  --ep-border: #2a2f3b;
+  --ep-border-strong: #343a47;
+  --ep-text: #f7f8fa;
+  --ep-text-muted: #9aa1b1;
+  --ep-accent: #e2e5ec; /* light slate reads on dark */
+  --ep-accent-hover: #ffffff;
+  --ep-on-accent: #15181f;
+  --ep-success-fg: #34d08a;
+  --ep-success-bg: #0f2a1e;
+  --ep-overlay: rgba(255, 255, 255, 0.08);
+  --ep-highlight: rgba(226, 229, 236, 0.08);
+  --ep-highlight-border: rgba(226, 229, 236, 0.5);
+  --ep-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  --ep-shadow-2: 0 8px 28px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}

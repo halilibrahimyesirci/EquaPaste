@@ -1,0 +1,18 @@
+{
+  "extends": "./.wxt/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+    "types": ["chrome", "vitest/globals"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "tests/unit/**/*.ts",
+    "wxt.config.ts",
+    "vitest.config.ts",
+    ".wxt/**/*.ts"
+  ]
+}

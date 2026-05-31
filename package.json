@@ -1,0 +1,65 @@
+{
+  "name": "equapaste",
+  "version": "0.2.0",
+  "description": "Copy rendered math from AI chats and paste it as native, editable equations into Word, Notion, Obsidian and more. 100% local, open source.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Halil İbrahim Yesirci (https://github.com/halilibrahimyesirci)",
+  "homepage": "https://github.com/halilibrahimyesirci/EquaPaste#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/halilibrahimyesirci/EquaPaste.git"
+  },
+  "bugs": {
+    "url": "https://github.com/halilibrahimyesirci/EquaPaste/issues"
+  },
+  "keywords": [
+    "latex",
+    "mathml",
+    "equation",
+    "word",
+    "browser-extension",
+    "chatgpt",
+    "claude",
+    "math"
+  ],
+  "private": true,
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "icons": "node scripts/generate-icons.mjs",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "temml": "^0.13.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.1",
+    "@playwright/test": "^1.50.1",
+    "@types/chrome": "^0.0.304",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "jsdom": "^26.0.0",
+    "prettier": "^3.5.1",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.0",
+    "vitest": "^3.0.5",
+    "wxt": "^0.20.0"
+  },
+  "packageManager": "pnpm@10.18.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

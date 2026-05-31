@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EquaPaste — KaTeX fixture</title>
+    <!-- Pre-rendered KaTeX markup (with the application/x-tex annotation) that
+         mirrors what ChatGPT/Claude produce. Serve this over http://localhost
+         while running `pnpm dev` to exercise the in-page pill on a real page. -->
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 720px;
+        margin: 40px auto;
+        line-height: 1.7;
+      }
+      .dark {
+        background: #15181f;
+        color: #eee;
+        padding: 16px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>KaTeX fixture</h1>
+    <p>
+      Inline math
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math xmlns="http://www.w3.org/1998/Math/MathML"
+            ><semantics
+              ><mrow
+                ><msup><mi>x</mi><mn>2</mn></msup></mrow
+              ><annotation encoding="application/x-tex">x^2</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true">x²</span></span
+      >
+      inside a sentence.
+    </p>
+
+    <p>Display equation:</p>
+    <span class="katex-display"
+      ><span class="katex"
+        ><span class="katex-mathml"
+          ><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow></mrow
+              ><annotation encoding="application/x-tex"
+                >\sum_{i=1}^{N}(Y_i-\beta_0-\beta_1 X_i)^2</annotation
+              ></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true">∑(Yᵢ − β₀ − β₁Xᵢ)²</span></span
+      ></span
+    >
+
+    <div class="dark">
+      <p>On a dark surface (auto-theme should flip the pill):</p>
+      <span class="katex-display"
+        ><span class="katex"
+          ><span class="katex-mathml"
+            ><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+              ><semantics
+                ><mrow></mrow
+                ><annotation encoding="application/x-tex"
+                  >\int_0^\infty e^{-x^2}\,dx = \frac{\sqrt{\pi}}{2}</annotation
+                ></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true">∫₀^∞ e^(−x²) dx = √π/2</span></span
+        ></span
+      >
+    </div>
+  </body>
+</html>

@@ -1,0 +1,210 @@
+/* In-page UI: a full-viewport overlay holding a single floating highlight box,
+   pill, and menu that track the hovered equation. Lives in a shadow root, so it
+   can't be styled by — or leak into — the host page. Positions are set inline
+   from getBoundingClientRect (we never touch the host DOM tree). */
+
+.ep-root {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  pointer-events: none;
+  font-family: var(--ep-font);
+  font-size: 12px;
+  line-height: 1;
+  color: var(--ep-text);
+}
+.ep-root *,
+.ep-root *::before,
+.ep-root *::after {
+  box-sizing: border-box;
+}
+
+/* --- hover highlight box around the equation --- */
+.ep-highlight {
+  position: fixed;
+  pointer-events: none;
+  border: 1px solid var(--ep-highlight-border);
+  background: var(--ep-highlight);
+  border-radius: var(--ep-r-sm);
+  opacity: 0;
+  transition: opacity var(--ep-dur-fast) var(--ep-ease-out);
+}
+.ep-highlight.is-visible {
+  opacity: 1;
+}
+
+/* --- the pill --- */
+.ep-pill {
+  position: fixed;
+  display: inline-flex;
+  align-items: stretch;
+  height: 28px;
+  pointer-events: auto;
+  background: var(--ep-bg);
+  border: 1px solid var(--ep-border);
+  border-radius: var(--ep-r-pill);
+  box-shadow: var(--ep-shadow-1);
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity var(--ep-dur-fast) var(--ep-ease-out),
+    transform var(--ep-dur-fast) var(--ep-ease-out);
+  overflow: hidden;
+}
+.ep-pill.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ep-pill__main,
+.ep-pill__caret {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ep-text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+}
+.ep-pill__main:hover,
+.ep-pill__caret:hover {
+  background: var(--ep-bg-subtle);
+  color: var(--ep-accent);
+}
+.ep-pill__main:active {
+  transform: scale(0.97);
+}
+.ep-pill__caret {
+  padding: 0 8px;
+  border-left: 1px solid var(--ep-border);
+  font-size: 10px;
+}
+.ep-pill__icon {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+}
+.ep-pill__label {
+  white-space: nowrap;
+}
+
+/* success / error confirmation (in place, no layout shift) */
+.ep-pill.is-success .ep-pill__main {
+  color: var(--ep-success-fg);
+}
+.ep-pill.is-success {
+  background: var(--ep-success-bg);
+  border-color: var(--ep-success-fg);
+}
+.ep-pill.is-error .ep-pill__main {
+  color: var(--ep-danger);
+}
+.ep-pill.is-error {
+  border-color: var(--ep-danger);
+}
+
+/* --- the mini-menu --- */
+.ep-menu {
+  position: fixed;
+  pointer-events: auto;
+  min-width: 208px;
+  padding: 6px;
+  background: var(--ep-bg);
+  border: 1px solid var(--ep-border);
+  border-radius: var(--ep-r-md);
+  box-shadow: var(--ep-shadow-2);
+  opacity: 0;
+  transform: translateY(6px);
+  transform-origin: top right;
+  transition:
+    opacity var(--ep-dur-base) var(--ep-ease-out),
+    transform var(--ep-dur-base) var(--ep-ease-out);
+}
+.ep-menu.is-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+.ep-menu[hidden] {
+  display: none;
+}
+
+.ep-menu__item {
+  appearance: none;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--ep-text);
+  font: inherit;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: var(--ep-r-sm);
+  cursor: pointer;
+}
+.ep-menu__item:hover,
+.ep-menu__item:focus-visible {
+  background: var(--ep-bg-subtle);
+}
+.ep-menu__item .ep-check {
+  color: var(--ep-accent);
+  font-weight: 700;
+}
+.ep-menu__kbd {
+  color: var(--ep-text-muted);
+  font-size: 11px;
+}
+.ep-menu__sep {
+  height: 1px;
+  background: var(--ep-border);
+  margin: 6px 4px;
+}
+.ep-menu__note {
+  color: var(--ep-text-muted);
+  font-size: 11px;
+  padding: 4px 10px 2px;
+  line-height: 1.35;
+}
+
+/* focus rings (keyboard only) */
+.ep-pill__main:focus-visible,
+.ep-pill__caret:focus-visible,
+.ep-menu__item:focus-visible {
+  outline: 2px solid var(--ep-focus);
+  outline-offset: -2px;
+  border-radius: var(--ep-r-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ep-highlight,
+  .ep-pill,
+  .ep-menu {
+    transition-duration: 1ms;
+    transform: none;
+  }
+  .ep-pill.is-visible,
+  .ep-menu.is-open {
+    transform: none;
+  }
+  .ep-pill__main:active {
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .ep-pill,
+  .ep-menu {
+    border-color: ButtonText;
+    background: ButtonFace;
+  }
+  .ep-highlight {
+    border-color: Highlight;
+  }
+}
