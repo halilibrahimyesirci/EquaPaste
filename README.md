@@ -2,7 +2,7 @@
 
 # Σ EquaPaste
 
-**Copy the math from ChatGPT & Claude — paste it as a _real, editable_ equation.**
+**Copy the math from ChatGPT, Claude & Gemini — paste it as a _real, editable_ equation.**
 
 🔒 **No servers · No tracking · Open source** — everything runs in your browser.
 
@@ -14,16 +14,44 @@ AI chats render beautiful math, but the moment you paste it into Word it turns i
 broken raw LaTeX. EquaPaste fixes that loop: hover any equation, click once, and it
 lands in your document as a **native, editable equation** — not a screenshot, not source code.
 
-> _Demo GIF goes here: hover an equation in ChatGPT → click → paste into Word as a real equation._
+<p align="center">
+  <img src="docs/screenshots/chatgpt.png" alt="EquaPaste: an equation highlighted in ChatGPT with a “Copy to Word” pill" width="760">
+  <br>
+  <em>Hover any equation in ChatGPT — the whole block highlights and a <strong>Σ Copy to Word</strong> pill appears.</em>
+</p>
 
 ## How it works
 
-1. Hover (or focus) an equation in ChatGPT or Claude — the whole block highlights and a **Copy** pill appears.
+1. Hover (or focus) an equation in ChatGPT, Claude or Gemini — the whole block highlights and a **Copy** pill appears.
 2. Click anywhere on the equation, or the pill, to copy to your default target (Word by default).
 3. Paste. Use the **▾** menu to pick a different format or target.
 
 No setup, no account, no network calls. The LaTeX → MathML → OMML conversion happens
 entirely on your device.
+
+## Screenshots
+
+The same one-click copy works across every supported chat:
+
+<table>
+  <tr>
+    <td width="50%" valign="top" align="center">
+      <img src="docs/screenshots/claude.png" alt="EquaPaste working on a Claude conversation" width="100%">
+      <br><sub><strong>Claude</strong></sub>
+    </td>
+    <td width="50%" valign="top" align="center">
+      <img src="docs/screenshots/gemini.png" alt="EquaPaste working on a Gemini conversation" width="100%">
+      <br><sub><strong>Gemini</strong></sub>
+    </td>
+  </tr>
+</table>
+
+The first-run onboarding and the toolbar popup — pick a default target, see which chats
+are active, and confirm everything stays on your device:
+
+<p align="center">
+  <img src="docs/screenshots/interface.png" alt="EquaPaste onboarding page and toolbar popup" width="820">
+</p>
 
 ## Supported targets
 
@@ -40,7 +68,7 @@ entirely on your device.
 > clipboard — there is no API for it. EquaPaste pastes a crisp image and stores the source
 > LaTeX in the image's alt text so it stays recoverable. We will never claim otherwise.
 
-Input platforms in this release: **ChatGPT** and **Claude**. Gemini, Copilot and
+Input platforms in this release: **ChatGPT**, **Claude** and **Gemini**. Copilot and
 Perplexity are planned.
 
 ## Install
