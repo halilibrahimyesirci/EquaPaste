@@ -109,6 +109,35 @@ async function render(): Promise<void> {
     chips,
   );
 
+  // how it works
+  const howItWorks = h(
+    'div',
+    { style: 'padding:0 16px 16px;display:flex;flex-direction:column;gap:8px' },
+    h('span', { class: 'ep-section-label', text: 'How it works' }),
+    h(
+      'div',
+      { class: 'ep-help' },
+      h(
+        'p',
+        { class: 'ep-help__item' },
+        h('strong', { text: 'Desktop Word — ' }),
+        document.createTextNode('copy, then paste ('),
+        h('span', { class: 'ep-kbd', text: 'Ctrl/⌘V' }),
+        document.createTextNode('). It drops in as a native, editable equation — no fuss.'),
+      ),
+      h(
+        'p',
+        { class: 'ep-help__item' },
+        h('strong', { text: 'Word Online — ' }),
+        document.createTextNode(
+          'paste as Plain text. Or copy as LaTeX, paste it, select it, then use the top ',
+        ),
+        h('strong', { text: 'Insert ▸ Equation' }),
+        document.createTextNode(' to turn it into a real equation automatically.'),
+      ),
+    ),
+  );
+
   // footer
   const version = chrome.runtime.getManifest().version;
   const footer = h(
@@ -135,7 +164,7 @@ async function render(): Promise<void> {
     ),
   );
 
-  app.append(header, defaultSection, shortcutSection, platformSection, footer);
+  app.append(header, defaultSection, shortcutSection, platformSection, howItWorks, footer);
 }
 
 void render();
