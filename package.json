@@ -42,6 +42,7 @@
     "format": "prettier --write .",
     "icons": "node scripts/generate-icons.mjs",
     "shots": "node scripts/store-shots.mjs",
+    "promo": "node scripts/render-promo.mjs",
     "postinstall": "wxt prepare"
   },
   "dependencies": {

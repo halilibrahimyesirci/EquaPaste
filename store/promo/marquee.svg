@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="560" viewBox="0 0 1400 560"
+     font-family="system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#1C2029"/>
+      <stop offset="1" stop-color="#13161D"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.32" r="0.5">
+      <stop offset="0" stop-color="#5B6CFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#5B6CFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="serif" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7F8FA"/>
+      <stop offset="1" stop-color="#D7DBE4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="560" fill="url(#bg)"/>
+  <rect width="1400" height="560" fill="url(#glow)"/>
+
+  <!-- brand lockup -->
+  <g transform="translate(80,70)">
+    <rect width="58" height="58" rx="15" fill="#E2E5EC"/>
+    <text x="29" y="31" text-anchor="middle" dominant-baseline="central"
+          font-size="36" font-weight="700" fill="#15181F">&#931;</text>
+    <text x="74" y="39" font-size="34" font-weight="700" fill="#F7F8FA" letter-spacing="-0.5">EquaPaste</text>
+  </g>
+
+  <!-- headline -->
+  <g fill="#F7F8FA" font-weight="800" letter-spacing="-1.5">
+    <text x="80" y="232" font-size="66">Copy any <tspan fill="#5B6CFF">equation.</tspan></text>
+    <text x="80" y="308" font-size="66">Paste it <tspan fill="#5B6CFF">for real.</tspan></text>
+  </g>
+
+  <!-- subtitle -->
+  <g fill="#9AA1B1" font-size="21" font-weight="400">
+    <text x="82" y="368">Rendered math from ChatGPT, Claude, Gemini, Perplexity &amp; DeepSeek —</text>
+    <text x="82" y="398">pasted as a native, editable equation. 100% on your device.</text>
+  </g>
+
+  <!-- feature chips -->
+  <g transform="translate(80,448)" font-size="18" font-weight="600" fill="#E2E5EC">
+    <g>
+      <rect width="250" height="44" rx="22" fill="#222632" stroke="#2A2F3B"/>
+      <circle cx="26" cy="22" r="6" fill="#34D08A"/>
+      <text x="44" y="28">Real, editable math</text>
+    </g>
+    <g transform="translate(266,0)">
+      <rect width="218" height="44" rx="22" fill="#222632" stroke="#2A2F3B"/>
+      <circle cx="26" cy="22" r="6" fill="#5B6CFF"/>
+      <text x="44" y="28">One click to Word</text>
+    </g>
+    <g transform="translate(500,0)">
+      <rect width="236" height="44" rx="22" fill="#222632" stroke="#2A2F3B"/>
+      <circle cx="26" cy="22" r="6" fill="#F2C94C"/>
+      <text x="44" y="28">100% local &amp; private</text>
+    </g>
+  </g>
+
+  <!-- right: equation card -> Word -->
+  <g transform="translate(812,128)">
+    <!-- chat/equation card -->
+    <rect width="508" height="304" rx="22" fill="#222632" stroke="#2A2F3B" stroke-width="1.5"/>
+    <circle cx="32" cy="34" r="6" fill="#FF5F57"/>
+    <circle cx="54" cy="34" r="6" fill="#FEBC2E"/>
+    <circle cx="76" cy="34" r="6" fill="#28C840"/>
+    <text x="478" y="40" text-anchor="end" font-size="14" fill="#6B7280" font-weight="600">AI chat</text>
+
+    <!-- hovered equation block: the whole block highlights -->
+    <rect x="38" y="150" width="432" height="104" rx="14" fill="#5B6CFF" fill-opacity="0.08"
+          stroke="#5B6CFF" stroke-width="2"/>
+    <text x="66" y="218" font-family="Georgia, 'Times New Roman', serif" font-style="italic"
+          font-size="60" fill="url(#serif)">E = mc<tspan font-size="36" dy="-22">2</tspan></text>
+
+    <!-- copy pill floating at the block's top-right corner -->
+    <g transform="translate(298,128)">
+      <rect width="172" height="44" rx="22" fill="#F7F8FA"/>
+      <text x="24" y="28" font-size="18" font-weight="700" fill="#15181F">&#931;</text>
+      <text x="46" y="28" font-size="16" font-weight="600" fill="#15181F">Copy to Word</text>
+    </g>
+
+    <!-- cursor clicking the pill (with a soft click ripple) -->
+    <g transform="translate(438,150)">
+      <ellipse cx="2" cy="3" rx="17" ry="12" fill="#5B6CFF" fill-opacity="0.22"/>
+      <path d="M0 0 L0 27 L7.2 20 L12.4 30.5 L17.6 28 L12.4 17.6 L21.4 17.6 Z"
+            fill="#F7F8FA" stroke="#15181F" stroke-width="1.6" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- arrow -->
+  <g transform="translate(812,452)">
+    <path d="M0 6 H470" stroke="#3A4150" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Word doc tile -->
+  <g transform="translate(1196,386)">
+    <rect width="124" height="94" rx="14" fill="#F7F8FA" stroke="#E2E5EC"/>
+    <rect x="14" y="14" width="28" height="28" rx="6" fill="#2B579A"/>
+    <text x="28" y="29" text-anchor="middle" dominant-baseline="central" font-size="18" font-weight="800" fill="#fff">W</text>
+    <text x="54" y="33" font-family="Georgia, serif" font-style="italic" font-size="20" fill="#15181F">E=mc&#178;</text>
+    <rect x="14" y="58" width="96" height="6" rx="3" fill="#E2E5EC"/>
+    <rect x="14" y="72" width="70" height="6" rx="3" fill="#E2E5EC"/>
+  </g>
+</svg>
