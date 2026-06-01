@@ -42,6 +42,12 @@ describe('latexToMathml', () => {
     expect(mml).not.toContain('semantics');
   });
 
+  it('strips stray HTML (e.g. the <span/> align leaks) so Word gets clean MathML', () => {
+    const mml = latexToMathml('\\begin{align} y &= mx+b \\end{align}', true);
+    expect(mml).not.toContain('<span');
+    expect(mml).not.toContain('<div');
+  });
+
   it('throws LatexConversionError on invalid input', () => {
     expect(() => latexToMathml('\\frac{', false)).toThrow(LatexConversionError);
   });

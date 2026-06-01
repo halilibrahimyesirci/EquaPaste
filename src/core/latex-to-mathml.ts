@@ -50,6 +50,10 @@ export function latexToMathml(latex: string, display: boolean): string {
 }
 
 const DROP_ATTRS = new Set(['class', 'style']);
+// Elements that should never reach Word/MathML consumers: Temml's decorative
+// <mspace>, the <semantics> source <annotation>, and stray HTML it occasionally
+// leaks (e.g. an empty <span/> inside the alignment cells of `\begin{align}`).
+const DROP_TAGS = new Set(['mspace', 'annotation', 'annotation-xml', 'span', 'div', 'br']);
 
 /**
  * Remove Temml's presentational cruft (class/style, decorative <mspace>),
@@ -77,7 +81,7 @@ function scrub(el: Element): void {
       if (DROP_ATTRS.has(attr.name)) node.removeAttribute(attr.name);
     }
     const tag = node.localName;
-    if (tag === 'mspace' || tag === 'annotation' || tag === 'annotation-xml') {
+    if (DROP_TAGS.has(tag)) {
       toRemove.push(node);
       return; // don't descend
     }
