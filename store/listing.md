@@ -4,7 +4,10 @@ Copy/paste fields for submission. Keep permissions minimal for fast review.
 
 ## Name
 
-EquaPaste — copy AI math into Word
+EquaPaste
+
+> The store title is taken from the manifest `name` field, so it displays as **EquaPaste**.
+> (There is no separate title field to fill in the listing form.)
 
 ## Short description (≤132 chars)
 
