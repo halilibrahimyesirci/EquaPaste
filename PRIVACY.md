@@ -7,7 +7,7 @@ backend, no analytics, and no telemetry. Everything happens locally in your brow
 
 ## What EquaPaste accesses
 
-- **The rendered equation you interact with.** On supported pages (ChatGPT, Claude),
+- **The rendered equation you interact with.** On supported pages (ChatGPT, Claude, Gemini),
   the extension reads the LaTeX source embedded in equations you hover or click, in
   order to convert and copy it. This data is processed in memory on your device and is
   never sent anywhere.

@@ -21,6 +21,7 @@
     "browser-extension",
     "chatgpt",
     "claude",
+    "gemini",
     "math"
   ],
   "private": true,
