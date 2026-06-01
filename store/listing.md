@@ -59,17 +59,35 @@ to their clipboard for pasting into document editors. It does no other work.
 "This extension does not collect user data." Certify the three Limited Use statements:
 data is not sold, not used for unrelated purposes, not used for creditworthiness.
 
-Privacy policy URL: publish PRIVACY.md on GitHub Pages and link it here.
+Privacy policy URL: https://github.com/halilibrahimyesirci/EquaPaste/blob/main/PRIVACY.md
+(a public GitHub file URL is accepted; no GitHub Pages site is required).
 
 ## Assets checklist
 
-- [ ] 128×128 store icon (provided: public/icon/128.png — replace with branded art before launch)
-- [ ] At least one 1280×800 screenshot — ideally a GIF-like flow: copy in ChatGPT → native equation in Word
-- [ ] 440×280 small promo tile
+- [x] 128×128 store icon — `public/icon/128.png` (the final Σ graphite mark; bundled in the build)
+- [x] 1280×800 screenshots — `store/screenshots/{chatgpt,claude,gemini,interface}.png`
+      (regenerate any time with `pnpm shots` from the raw captures in `docs/screenshots/`)
+- [ ] 440×280 small promo tile (optional; can launch without it)
 - [ ] (optional) 1400×560 marquee
+
+Screenshot order to upload (best first): `interface.png` (what it is) → `chatgpt.png`
+(in action) → `gemini.png`, `claude.png` (works everywhere).
+
+## Submission steps (Chrome Web Store)
+
+1. Build the package: `pnpm build` then `pnpm zip` → `.output/equapaste-<version>-chrome.zip`.
+2. Go to the [Developer Dashboard](https://chrome.google.com/webstore/devconsole) → **New item** → upload the zip.
+3. **Store listing** tab: paste the Name, Short description, and Detailed description above;
+   set Category = Productivity; language = English; upload the four 1280×800 screenshots.
+4. **Privacy** tab: single purpose = paste the declaration above; add a justification for each
+   permission (text above); set the privacy policy URL; certify the three data-use statements
+   ("does not collect user data", not sold, not for unrelated use, not for creditworthiness).
+5. **Distribution**: Public, all regions.
+6. Submit for review. First review typically takes a few days; you'll get an email.
 
 ## Other stores
 
 - **Edge Add-ons:** free; submit the same `.zip` (`pnpm zip`).
 - **Firefox AMO:** free; `pnpm zip:firefox` (manifest includes the required gecko id and a
-  non-persistent background for Firefox). Provide source + build steps if asked.
+  non-persistent background for Firefox). Provide the source zip (`.output/equapaste-<version>-sources.zip`)
+  + build steps (`pnpm install` → `pnpm build:firefox`) if asked.

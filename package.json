@@ -39,6 +39,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "icons": "node scripts/generate-icons.mjs",
+    "shots": "node scripts/store-shots.mjs",
     "postinstall": "wxt prepare"
   },
   "dependencies": {
