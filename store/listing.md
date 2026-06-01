@@ -66,10 +66,10 @@ Privacy policy URL: https://github.com/halilibrahimyesirci/EquaPaste/blob/main/P
 
 - [x] 128×128 store icon — `public/icon/128.png` (the final Σ graphite mark; bundled in the build)
 - [x] 1280×800 screenshots — `store/screenshots/{chatgpt,claude,gemini,interface}.png`
-      (regenerate any time with `pnpm shots` from the raw captures in `docs/screenshots/`)
+      (composed from the raw captures in `docs/screenshots/`)
 - [x] 440×280 small promo tile — `store/screenshots/promotitle.png`
 - [x] 1400×560 marquee — `store/screenshots/marquee.png`
-      (both rendered from the brand SVGs in `store/promo/` via `pnpm promo`)
+      (both exported from the editable brand SVGs in `store/promo/`)
 
 Screenshot order to upload (best first): `interface.png` (what it is) → `chatgpt.png`
 (in action) → `gemini.png`, `claude.png` (works everywhere). The promo tiles
