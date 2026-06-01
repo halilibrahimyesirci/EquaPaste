@@ -89,6 +89,47 @@ function wrap(s: string): string {
   return [...s].length > 1 ? `(${s})` : s;
 }
 
+/** The stretchy fence operators Temml wraps matrices / cases in (( ) [ ] { }). */
+function isFenceOp(el: Element | null): boolean {
+  return !!el && el.localName === 'mo' && el.getAttribute('fence') === 'true';
+}
+function tableCells(row: Element): Element[] {
+  return elementChildren(row).filter((c) => c.localName === 'mtd');
+}
+/**
+ * Render an <mtable>. Two shapes Temml emits:
+ *  - Alignment environments (aligned/align/gather/split), marked displaystyle="true".
+ *    Here "&" is alignment, not a column separator, so each line's cells are
+ *    concatenated and every row goes on its own line — `a=b` / `c=d`.
+ *  - Matrices / cases — real grids: cells joined by ", ", rows by "; ". A surrounding
+ *    fence (( ) [ ] { }) already delimits it, so we add our own [..] brackets only when
+ *    the table stands alone — otherwise they would double up (`[[1, 2]]`).
+ */
+function table(el: Element): string {
+  const rows = elementChildren(el).filter((r) => r.localName === 'mtr');
+  if (el.getAttribute('displaystyle') === 'true') {
+    return rows
+      .map((r) =>
+        tableCells(r)
+          .map((c) => walkList(childNodes(c)))
+          .filter((s) => s !== '')
+          .join(''),
+      )
+      .filter((line) => line !== '')
+      .join('\n');
+  }
+  const grid = rows
+    .map((r) =>
+      tableCells(r)
+        .map((c) => walkList(childNodes(c)))
+        .join(', '),
+    )
+    .join('; ');
+  return isFenceOp(el.previousElementSibling) || isFenceOp(el.nextElementSibling)
+    ? grid
+    : `[${grid}]`;
+}
+
 // ---- walk ----
 function walkList(nodes: Node[]): string {
   let out = '';
@@ -149,17 +190,8 @@ function walkElement(el: Element): string {
       return walkArg(k[0]) + superscript(walkArg(k[1]));
     case 'munderover':
       return walkArg(k[0]) + subscript(walkArg(k[1])) + superscript(walkArg(k[2]));
-    case 'mtable': {
-      const rows = elementChildren(el)
-        .filter((r) => r.localName === 'mtr')
-        .map((r) =>
-          elementChildren(r)
-            .filter((c) => c.localName === 'mtd')
-            .map((c) => walkList(childNodes(c)))
-            .join(', '),
-        );
-      return `[${rows.join('; ')}]`;
-    }
+    case 'mtable':
+      return table(el);
     case 'mfenced': {
       const open = el.getAttribute('open') ?? '(';
       const close = el.getAttribute('close') ?? ')';

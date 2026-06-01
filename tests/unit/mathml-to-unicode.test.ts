@@ -70,4 +70,36 @@ describe('mathmlToUnicode', () => {
   it('returns empty string for empty input (resilient)', () => {
     expect(mathmlToUnicode('')).toBe('');
   });
+
+  // ---- matrices & alignment (the "&" separator) ----
+
+  it('bare matrix -> bracketed grid: [a, b; c, d]', () => {
+    expect(u('\\begin{matrix}a&b\\\\c&d\\end{matrix}', true)).toBe('[a, b; c, d]');
+  });
+
+  it('pmatrix uses its own ( ) fence, not a doubled bracket', () => {
+    // Regression: was "([a, b; c, d])".
+    expect(u('\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}', true)).toBe('(a, b; c, d)');
+  });
+
+  it('bmatrix uses its own [ ] fence, not a doubled bracket', () => {
+    // Regression: was "[[1, 2; 3, 4]]".
+    expect(u('\\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}', true)).toBe('[1, 2; 3, 4]');
+  });
+
+  it('aligned: "&" is alignment, so each line concatenates onto its own row', () => {
+    // Regression: was "[a, =b; c, =d]".
+    expect(u('\\begin{aligned} a &= b \\\\ c &= d \\end{aligned}', true)).toBe('a=b\nc=d');
+  });
+
+  it('align: drops Temml padding cells instead of emitting empty commas', () => {
+    // Regression: was "[, y, =mx+b, ]".
+    expect(u('\\begin{align} y &= mx+b \\end{align}', true)).toBe('y=mx+b');
+  });
+
+  it('cases keeps its { fence and reads as value, condition per row', () => {
+    expect(u('f(x) = \\begin{cases} 1 & x \\ge 0 \\\\ 0 & x < 0 \\end{cases}', true)).toBe(
+      'f(x)={1, x≥0; 0, x<0',
+    );
+  });
 });
