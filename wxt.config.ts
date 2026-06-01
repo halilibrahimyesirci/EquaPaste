@@ -43,9 +43,15 @@ export default defineConfig({
     name: 'EquaPaste',
     // <=132 chars; the pain + the fix, per store listing guidance.
     description:
-      'Copy math from ChatGPT, Claude & Gemini and paste it as a native, editable equation in Word, Notion, Obsidian & more. 100% local.',
+      'Copy math from ChatGPT, Claude, Gemini & Perplexity and paste it as a native, editable equation in Word, Notion & more. 100% local.',
     // MVP host scope: only the AI chat domains we actually inject into.
-    host_permissions: ['https://chatgpt.com/*', 'https://claude.ai/*', 'https://gemini.google.com/*'],
+    host_permissions: [
+      'https://chatgpt.com/*',
+      'https://claude.ai/*',
+      'https://gemini.google.com/*',
+      'https://www.perplexity.ai/*',
+      'https://perplexity.ai/*',
+    ],
     permissions: ['clipboardWrite', 'storage', 'activeTab', 'scripting'],
     commands: {
       'copy-default': {

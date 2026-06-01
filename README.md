@@ -2,7 +2,7 @@
 
 # Σ EquaPaste
 
-**Copy the math from ChatGPT, Claude & Gemini — paste it as a _real, editable_ equation.**
+**Copy the math from ChatGPT, Claude, Gemini & Perplexity — paste it as a _real, editable_ equation.**
 
 🔒 **No servers · No tracking · Open source** — everything runs in your browser.
 
@@ -22,7 +22,7 @@ lands in your document as a **native, editable equation** — not a screenshot, 
 
 ## How it works
 
-1. Hover (or focus) an equation in ChatGPT, Claude or Gemini — the whole block highlights and a **Copy** pill appears.
+1. Hover (or focus) an equation in ChatGPT, Claude, Gemini or Perplexity — the whole block highlights and a **Copy** pill appears.
 2. Click anywhere on the equation, or the pill, to copy to your default target (Word by default).
 3. Paste. Use the **▾** menu to pick a different format or target.
 
@@ -68,8 +68,8 @@ are active, and confirm everything stays on your device:
 > clipboard — there is no API for it. EquaPaste pastes a crisp image and stores the source
 > LaTeX in the image's alt text so it stays recoverable. We will never claim otherwise.
 
-Input platforms in this release: **ChatGPT**, **Claude** and **Gemini**. Copilot and
-Perplexity are planned.
+Input platforms in this release: **ChatGPT**, **Claude**, **Gemini** and **Perplexity**.
+Microsoft Copilot and more are planned.
 
 ## Install
 

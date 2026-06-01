@@ -20,6 +20,7 @@ function currentPlatform(): PlatformId {
   const host = location.hostname;
   if (host.includes('claude')) return 'claude';
   if (host.includes('gemini')) return 'gemini';
+  if (host.includes('perplexity')) return 'perplexity';
   return 'chatgpt';
 }
 

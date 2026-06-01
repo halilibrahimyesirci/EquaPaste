@@ -4,7 +4,7 @@
 //
 // Source-of-LaTeX strategy (in priority order):
 //   1. KaTeX MathML annotation `.katex-mathml annotation[encoding="application/x-tex"]`
-//      — ChatGPT & Claude (KaTeX default `htmlAndMathml`).
+//      — ChatGPT, Claude & Perplexity (KaTeX default `htmlAndMathml`).
 //   2. A `data-*` attribute on an ancestor — Gemini renders KaTeX html-only and
 //      puts the source in `.math-block[data-math]`; also handle data-latex/data-tex.
 

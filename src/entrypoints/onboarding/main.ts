@@ -41,7 +41,7 @@ function render(): void {
     h('p', {
       class: 'ep-muted',
       style: 'margin:0;max-width:42ch;font-size:15px',
-      text: 'EquaPaste turns rendered math in ChatGPT, Claude & Gemini into native, editable equations — 100% on your device.',
+      text: 'EquaPaste turns rendered math in ChatGPT, Claude, Gemini & Perplexity into native, editable equations — 100% on your device.',
     }),
   );
 

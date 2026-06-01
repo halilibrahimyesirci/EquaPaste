@@ -8,6 +8,7 @@ const PLATFORM_LABELS: Record<PlatformId, string> = {
   chatgpt: 'ChatGPT',
   claude: 'Claude',
   gemini: 'Gemini',
+  perplexity: 'Perplexity',
 };
 
 async function render(): Promise<void> {

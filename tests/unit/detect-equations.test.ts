@@ -62,6 +62,20 @@ describe('Gemini (html-only KaTeX + data-math)', () => {
   });
 });
 
+describe('Perplexity (standard KaTeX, same as ChatGPT/Claude)', () => {
+  // Real sample from perplexity.ai: a .katex-display > .katex > .katex-mathml with the
+  // application/x-tex annotation — identical to ChatGPT/Claude, so the KaTeX path handles it.
+  const LATEX = 'd=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}';
+
+  it('recovers the full LaTeX from the annotation and treats it as display', () => {
+    document.body.innerHTML = katex(LATEX, true);
+    const eq = extractKatex(document.querySelector('.katex')!)!;
+    expect(eq.latex).toBe(LATEX);
+    expect(eq.display).toBe(true);
+    expect(eq.anchor).toBe(document.querySelector('.katex-display'));
+  });
+});
+
 describe('equationFromPoint', () => {
   it('resolves the equation from a descendant node (whole-block click)', () => {
     document.body.innerHTML = katex('a+b', true);

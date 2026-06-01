@@ -12,6 +12,8 @@ export default defineContentScript({
     'https://chatgpt.com/*',
     'https://claude.ai/*',
     'https://gemini.google.com/*',
+    'https://www.perplexity.ai/*',
+    'https://perplexity.ai/*',
     ...(import.meta.env.DEV ? ['http://localhost/*', 'http://127.0.0.1/*'] : []),
   ],
   runAt: 'document_idle',
