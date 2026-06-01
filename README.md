@@ -86,6 +86,32 @@ pnpm build          # outputs .output/chrome-mv3
 
 Then load `.output/chrome-mv3` via `chrome://extensions` → *Load unpacked*.
 
+## FAQ
+
+**How do I copy an equation from ChatGPT into Word?**
+Hover the equation, click it (or the “Σ Copy to Word” pill), then paste (Ctrl/⌘V) into Word — it arrives as a native, editable equation, not text.
+
+**Why does math from ChatGPT paste into Word as broken LaTeX like `\frac{a}{b}`?**
+The chat only puts the raw LaTeX source on your clipboard. EquaPaste converts it to MathML, which Word turns into a real OfficeMath equation automatically.
+
+**Does it work with Claude, Gemini, Perplexity and DeepSeek too?**
+Yes — the same one-click copy works on all five. Microsoft Copilot is planned.
+
+**How do I paste an AI equation into Word Online (Word for the web)?**
+Paste it as Plain text, or copy it as LaTeX, paste the LaTeX, select it, and use the top **Insert ▸ Equation** to convert it into a real equation.
+
+**Can I copy equations into Notion, Obsidian or Markdown?**
+Yes. Notion gets a native math block (type `/math`, then paste); Obsidian and GitHub/GitLab Markdown get `$…$` / `$$…$$` that renders.
+
+**How do I get a ChatGPT equation into Google Docs?**
+EquaPaste pastes it as readable Unicode text (x², √, subscripts). Google Docs can’t accept a native equation from the clipboard.
+
+**Can I copy the equation as LaTeX or MathML instead?**
+Yes — open the **▾** menu on the pill and pick LaTeX, MathML, or plain Unicode text.
+
+**Is EquaPaste free, private and open source?**
+Yes. It’s MIT-licensed, runs 100% in your browser, and sends nothing anywhere — no servers, no tracking, no account.
+
 ## Privacy
 
 EquaPaste collects **nothing**. No analytics, no telemetry, no account, no external
