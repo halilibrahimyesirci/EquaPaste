@@ -11,14 +11,14 @@ EquaPaste
 
 ## Short description (≤132 chars)
 
-Copy math from ChatGPT, Claude, Gemini, Perplexity & DeepSeek and paste it as a native, editable Word/Notion equation. 100% local.
+Copy math from ChatGPT, Claude, Gemini, Perplexity, DeepSeek & Google AI into editable Word/Notion equations. 100% local.
 
 ## Detailed description
 
 Tired of copying an equation from an AI chat only to watch it turn into broken LaTeX in
 Word? EquaPaste fixes that in one click.
 
-Hover any equation in ChatGPT, Claude, Gemini, Perplexity or DeepSeek — the whole block highlights and a Copy button
+Hover any equation in ChatGPT, Claude, Gemini, Perplexity, DeepSeek or Google Search's AI Mode — the whole block highlights and a Copy button
 appears. Click it and the equation lands in your document as a real, editable equation:
 native OfficeMath in Word, a math block in Notion, `$$…$$` in Obsidian/Markdown, and more.
 
@@ -32,7 +32,7 @@ native OfficeMath in Word, a math block in Notion, `$$…$$` in Obsidian/Markdow
 Honest note: Google Docs has no way to accept a native equation from the clipboard, so
 EquaPaste pastes it as readable Unicode text (falling back to LaTeX where no Unicode form exists).
 
-Works today on ChatGPT, Claude, Gemini, Perplexity, and DeepSeek. Microsoft Copilot is planned.
+Works today on ChatGPT, Claude, Gemini, Perplexity, DeepSeek, and Google Search's AI Mode. Microsoft Copilot is planned.
 
 FREQUENTLY ASKED QUESTIONS
 
@@ -42,8 +42,8 @@ Hover the equation, click it (or the "Copy to Word" pill), then paste (Ctrl/Cmd+
 Why does math from ChatGPT paste into Word as broken LaTeX (like \frac{a}{b})?
 The chat only puts the raw LaTeX source on your clipboard. EquaPaste converts it to MathML, which Word turns into a real OfficeMath equation automatically.
 
-Does it work with Claude, Gemini, Perplexity and DeepSeek?
-Yes — the same one-click copy works on all five. Microsoft Copilot is planned.
+Does it work with Claude, Gemini, Perplexity, DeepSeek and Google AI Mode?
+Yes — the same one-click copy works across all six, including the equations Google Search's AI Mode renders. Microsoft Copilot is planned.
 
 How do I paste an AI equation into Word Online (Word for the web)?
 Paste it as Plain text, or copy it as LaTeX, paste the LaTeX, select it, and use the top Insert > Equation to convert it into a real equation.
@@ -82,9 +82,10 @@ so neither is needed, and requesting them would be an unnecessary permission.
   shortcut. EquaPaste only writes to the clipboard; it never reads it.
 - **storage** — Stores the user's own preferences locally (default paste target, theme,
   enabled platforms, Word output format) via `chrome.storage`. No data leaves the device.
-- **Host permissions (chatgpt.com, claude.ai, gemini.google.com, perplexity.ai, chat.deepseek.com)** —
-  Limited to the AI chat domains where rendered equations appear, so the content script can
-  detect the equation under the cursor and convert it. No broad `<all_urls>` access is requested.
+- **Host permissions (chatgpt.com, claude.ai, gemini.google.com, perplexity.ai, chat.deepseek.com, www.google.com/search)** —
+  Limited to the AI chat / search-AI surfaces where rendered equations appear, so the content
+  script can detect the equation under the cursor and convert it. The Google match is scoped to
+  `/search` (AI Mode) only; no broad `<all_urls>` access is requested.
 
 ## Data use disclosure
 

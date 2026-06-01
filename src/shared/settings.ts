@@ -1,7 +1,13 @@
 import type { TargetId } from '../core/types';
 import type { WordStrategy } from '../core/clipboard-payload';
 
-export type PlatformId = 'chatgpt' | 'claude' | 'gemini' | 'perplexity' | 'deepseek';
+export type PlatformId =
+  | 'chatgpt'
+  | 'claude'
+  | 'gemini'
+  | 'perplexity'
+  | 'deepseek'
+  | 'google';
 export type ThemeMode = 'auto' | 'light' | 'dark';
 export type PillSide = 'top-right' | 'top-left';
 
@@ -29,7 +35,14 @@ export const DEFAULT_SETTINGS: Settings = {
   theme: 'auto',
   clickEquationToCopy: true,
   pillSide: 'top-right',
-  platforms: { chatgpt: true, claude: true, gemini: true, perplexity: true, deepseek: true },
+  platforms: {
+    chatgpt: true,
+    claude: true,
+    gemini: true,
+    perplexity: true,
+    deepseek: true,
+    google: true,
+  },
   // Bare MathML — Word converts it to a native equation. (Power users can switch.)
   wordStrategy: 'mathml',
 };

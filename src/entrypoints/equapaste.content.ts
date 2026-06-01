@@ -15,6 +15,7 @@ export default defineContentScript({
     'https://www.perplexity.ai/*',
     'https://perplexity.ai/*',
     'https://chat.deepseek.com/*',
+    'https://www.google.com/search*', // Google Search "AI Mode" / AI Overviews
     ...(import.meta.env.DEV ? ['http://localhost/*', 'http://127.0.0.1/*'] : []),
   ],
   runAt: 'document_idle',

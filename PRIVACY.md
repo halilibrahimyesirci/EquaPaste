@@ -7,7 +7,7 @@ backend, no analytics, and no telemetry. Everything happens locally in your brow
 
 ## What EquaPaste accesses
 
-- **The rendered equation you interact with.** On supported pages (ChatGPT, Claude, Gemini, Perplexity, DeepSeek),
+- **The rendered equation you interact with.** On supported pages (ChatGPT, Claude, Gemini, Perplexity, DeepSeek, and Google Search's AI Mode),
   the extension reads the LaTeX source embedded in equations you hover or click, in
   order to convert and copy it. This data is processed in memory on your device and is
   never sent anywhere.
@@ -30,7 +30,7 @@ backend, no analytics, and no telemetry. Everything happens locally in your brow
 |---|---|
 | `clipboardWrite` | To write the converted equation to your clipboard when you click copy or press the shortcut. EquaPaste only writes; it never reads your clipboard. |
 | `storage` | To save your settings (default target, theme, enabled platforms) locally. |
-| Host access to `chatgpt.com`, `claude.ai`, `gemini.google.com`, `perplexity.ai`, `chat.deepseek.com` | To detect rendered equations on those pages. No other sites are accessed. |
+| Host access to `chatgpt.com`, `claude.ai`, `gemini.google.com`, `perplexity.ai`, `chat.deepseek.com`, `www.google.com/search` | To detect rendered equations on those pages (`google.com/search` is limited to search results, for AI Mode). No other sites are accessed. |
 
 ## Contact
 

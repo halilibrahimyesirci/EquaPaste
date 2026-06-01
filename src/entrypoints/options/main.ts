@@ -11,6 +11,7 @@ const PLATFORM_LABELS: Record<PlatformId, string> = {
   gemini: 'Gemini',
   perplexity: 'Perplexity',
   deepseek: 'DeepSeek',
+  google: 'Google AI',
 };
 // How the "Word" target builds its clipboard payload. MathML is the working
 // default; the others are for troubleshooting on unusual Word builds.

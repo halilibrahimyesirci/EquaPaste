@@ -10,6 +10,7 @@ const PLATFORM_LABELS: Record<PlatformId, string> = {
   gemini: 'Gemini',
   perplexity: 'Perplexity',
   deepseek: 'DeepSeek',
+  google: 'Google AI',
 };
 
 async function render(): Promise<void> {

@@ -10,7 +10,7 @@ human + real target apps can verify. Tick a box only after you actually see the 
 
 ## 1. Detection & in-page UX (per platform)
 
-For **each** of ChatGPT, Claude, Gemini, Perplexity, DeepSeek:
+For **each** of ChatGPT, Claude, Gemini, Perplexity, DeepSeek, Google AI Mode:
 
 - [ ] Hover a **display** equation → whole block highlights + `Σ Copy to Word` pill appears top-right.
 - [ ] Hover an **inline** equation → small copy affordance (reading flow not broken).

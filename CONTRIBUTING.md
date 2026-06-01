@@ -36,7 +36,7 @@ pnpm test:e2e       # Playwright (needs a display; loads the built extension)
 
 ## Testing the in-page UI
 
-Run `pnpm dev`, then open ChatGPT, Claude, Gemini, Perplexity or DeepSeek. To test on a local page, serve
+Run `pnpm dev`, then open ChatGPT, Claude, Gemini, Perplexity, DeepSeek or Google AI Mode. To test on a local page, serve
 `tests/e2e/fixtures/katex-page.html` over `http://localhost` (dev builds also match
 localhost) and hover the equations.
 

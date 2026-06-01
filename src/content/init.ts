@@ -22,6 +22,7 @@ function currentPlatform(): PlatformId {
   if (host.includes('gemini')) return 'gemini';
   if (host.includes('perplexity')) return 'perplexity';
   if (host.includes('deepseek')) return 'deepseek';
+  if (host.includes('google')) return 'google'; // gemini.google.com already returned above
   return 'chatgpt';
 }
 
