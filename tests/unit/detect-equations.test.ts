@@ -1,5 +1,10 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { extractKatex, equationFromPoint, findEquations } from '../../src/content/detect-equations';
+import {
+  extractKatex,
+  extractXpm,
+  equationFromPoint,
+  findEquations,
+} from '../../src/content/detect-equations';
 
 /** Build KaTeX-shaped markup like ChatGPT/Claude render (with MathML annotation). */
 function katex(latex: string, display: boolean): string {
@@ -85,6 +90,46 @@ describe('Perplexity & DeepSeek (standard KaTeX, same as ChatGPT/Claude)', () =>
     expect(eq.latex).toBe(latex);
     expect(eq.display).toBe(true);
     expect(eq.anchor).toBe(document.querySelector('.katex-display'));
+  });
+});
+
+describe('Google Search "AI Mode" (data-xpm-latex on data-xpm-copy-root)', () => {
+  // Google draws its own SVG glyphs; the full LaTeX is on the copy-root wrapper, while
+  // each inner <img> carries only a partial fragment (\oint_C, (, P, \,dx, …). We must
+  // read the root and ignore the fragments.
+  function xpm(full: string, fragments: string[], displayStyle = 'inline'): string {
+    const inner = fragments
+      .map((f) => `<div><img data-xpm-latex="${f.replace(/"/g, '&quot;')}" /><svg></svg></div>`)
+      .join('');
+    return `<span data-xpm-copy-root="" data-xpm-latex="${full.replace(/"/g, '&quot;')}" style="display: ${displayStyle}">${inner}</span>`;
+  }
+
+  it('reads the full LaTeX from the root, not the partial inner fragments', () => {
+    const full = 'd = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2}';
+    document.body.innerHTML = xpm(full, ['d ', '\\hphantom{}= \\sqrt{(x_2-x_1)^2}']);
+    const root = document.querySelector('[data-xpm-copy-root]')!;
+    const eq = extractXpm(root)!;
+    expect(eq.latex).toBe(full);
+    expect(eq.display).toBe(false); // wrapper is display:inline
+    expect(eq.anchor).toBe(root);
+  });
+
+  it('equationFromPoint resolves an inner glyph up to the whole equation', () => {
+    const full =
+      '\\oint_C (P\\,dx + Q\\,dy) = \\iint_R \\left( \\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y} \\right) dA';
+    document.body.innerHTML = xpm(full, ['\\oint_C ', '(', 'P', '\\,dx ', 'dA']);
+    const innerImg = document.querySelector('img[data-xpm-latex]')!; // the partial "\oint_C "
+    expect(equationFromPoint(innerImg)?.latex).toBe(full);
+  });
+
+  it('findEquations picks up each equation once', () => {
+    document.body.innerHTML = xpm('a^2+b^2=c^2', ['a', '^2', '+b']);
+    expect(findEquations(document.body).map((e) => e.latex)).toEqual(['a^2+b^2=c^2']);
+  });
+
+  it('treats a block (non-inline) wrapper as display', () => {
+    document.body.innerHTML = xpm('\\int_0^1 x\\,dx', ['\\int_0^1 '], 'block');
+    expect(extractXpm(document.querySelector('[data-xpm-copy-root]')!)!.display).toBe(true);
   });
 });
 
