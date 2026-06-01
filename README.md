@@ -62,11 +62,11 @@ are active, and confirm everything stays on your device:
 | **Obsidian / Markdown** (GitHub, GitLab) | `$…$` / `$$…$$`, renders natively | High |
 | **LaTeX / MathML** | Raw source | High |
 | **Word Online** | Best-effort (LaTeX fallback / open in desktop) | Limited |
-| **Google Docs** | Image **with the LaTeX in alt text** — native equations aren't possible via clipboard | Limited |
+| **Google Docs** | Readable **Unicode text** (x², √, α) — native equations aren't possible via clipboard | Limited |
 
 > **Honest note on Google Docs:** Google Docs cannot accept a native equation from the
-> clipboard — there is no API for it. EquaPaste pastes a crisp image and stores the source
-> LaTeX in the image's alt text so it stays recoverable. We will never claim otherwise.
+> clipboard — there is no API for it. EquaPaste pastes the equation as readable Unicode text
+> (x², √, subscripts), falling back to LaTeX for structures with no Unicode form. We will never claim otherwise.
 
 Input platforms in this release: **ChatGPT**, **Claude**, **Gemini**, **Perplexity** and
 **DeepSeek**. Microsoft Copilot and more are planned.

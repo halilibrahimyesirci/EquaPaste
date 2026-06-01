@@ -12,8 +12,8 @@ Copy math from ChatGPT, Claude, Gemini, Perplexity & DeepSeek and paste it as a 
 
 ## Detailed description
 
-Tired of copying an equation from ChatGPT, Claude or Gemini only to watch it turn into
-broken LaTeX in Word? EquaPaste fixes that in one click.
+Tired of copying an equation from an AI chat only to watch it turn into broken LaTeX in
+Word? EquaPaste fixes that in one click.
 
 Hover any equation in ChatGPT, Claude, Gemini, Perplexity or DeepSeek — the whole block highlights and a Copy button
 appears. Click it and the equation lands in your document as a real, editable equation:
@@ -23,11 +23,11 @@ native OfficeMath in Word, a math block in Notion, `$$…$$` in Obsidian/Markdow
 • Native, editable results — not screenshots, not raw source code.
 • 100% local: no servers, no tracking, no account. Conversion happens in your browser.
 • Multiple destinations: Word, Word Online, Notion, Obsidian, GitHub/GitLab Markdown,
-  LaTeX, MathML, and Google Docs (as an image with the LaTeX saved in alt text).
+  LaTeX, MathML, and Google Docs (as readable Unicode text — x², √, subscripts).
 • Light/dark aware, keyboard accessible, open source (MIT).
 
 Honest note: Google Docs has no way to accept a native equation from the clipboard, so
-EquaPaste pastes an image and embeds the source LaTeX in the alt text.
+EquaPaste pastes it as readable Unicode text (falling back to LaTeX where no Unicode form exists).
 
 Works today on ChatGPT, Claude, Gemini, Perplexity, and DeepSeek. Microsoft Copilot is planned.
 
@@ -38,7 +38,7 @@ Productivity
 ## Single-purpose declaration
 
 EquaPaste detects rendered LaTeX/math equations on supported AI chat pages and lets the
-user one-click copy them as native, editable equations (or an image with LaTeX alt text)
+user one-click copy them as native, editable equations (or as LaTeX/MathML/Unicode text)
 to their clipboard for pasting into document editors. It does no other work.
 
 ## Permission justifications
