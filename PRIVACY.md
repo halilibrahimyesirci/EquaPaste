@@ -28,11 +28,9 @@ backend, no analytics, and no telemetry. Everything happens locally in your brow
 
 | Permission | Why |
 |---|---|
-| `clipboardWrite` | To write the converted equation to your clipboard when you click copy. |
-| `activeTab` | To act on the current tab in response to your click / shortcut. |
-| `scripting` | To run the in-page copy UI on supported pages. |
-| `storage` | To save your settings locally. |
-| Host access to `chatgpt.com`, `claude.ai` | To detect rendered equations on those pages. No other sites are accessed. |
+| `clipboardWrite` | To write the converted equation to your clipboard when you click copy or press the shortcut. EquaPaste only writes; it never reads your clipboard. |
+| `storage` | To save your settings (default target, theme, enabled platforms) locally. |
+| Host access to `chatgpt.com`, `claude.ai`, `gemini.google.com`, `perplexity.ai`, `chat.deepseek.com` | To detect rendered equations on those pages. No other sites are accessed. |
 
 ## Contact
 
