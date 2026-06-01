@@ -14,6 +14,7 @@ export default defineContentScript({
     'https://gemini.google.com/*',
     'https://www.perplexity.ai/*',
     'https://perplexity.ai/*',
+    'https://chat.deepseek.com/*',
     ...(import.meta.env.DEV ? ['http://localhost/*', 'http://127.0.0.1/*'] : []),
   ],
   runAt: 'document_idle',

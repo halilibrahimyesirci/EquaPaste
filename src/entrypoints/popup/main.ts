@@ -9,6 +9,7 @@ const PLATFORM_LABELS: Record<PlatformId, string> = {
   claude: 'Claude',
   gemini: 'Gemini',
   perplexity: 'Perplexity',
+  deepseek: 'DeepSeek',
 };
 
 async function render(): Promise<void> {

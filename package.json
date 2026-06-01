@@ -23,6 +23,7 @@
     "claude",
     "gemini",
     "perplexity",
+    "deepseek",
     "math"
   ],
   "private": true,

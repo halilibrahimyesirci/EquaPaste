@@ -62,15 +62,27 @@ describe('Gemini (html-only KaTeX + data-math)', () => {
   });
 });
 
-describe('Perplexity (standard KaTeX, same as ChatGPT/Claude)', () => {
-  // Real sample from perplexity.ai: a .katex-display > .katex > .katex-mathml with the
-  // application/x-tex annotation — identical to ChatGPT/Claude, so the KaTeX path handles it.
-  const LATEX = 'd=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}';
-
-  it('recovers the full LaTeX from the annotation and treats it as display', () => {
-    document.body.innerHTML = katex(LATEX, true);
+describe('Perplexity & DeepSeek (standard KaTeX, same as ChatGPT/Claude)', () => {
+  // Real samples: both render a .katex-display > .katex > .katex-mathml with the
+  // application/x-tex annotation — identical to ChatGPT/Claude, so the KaTeX path handles
+  // them. DeepSeek adds a `ds-markdown-math` class on the wrapper, which detection ignores.
+  it('Perplexity: recovers the full LaTeX and treats it as display', () => {
+    const latex = 'd=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}';
+    document.body.innerHTML = katex(latex, true);
     const eq = extractKatex(document.querySelector('.katex')!)!;
-    expect(eq.latex).toBe(LATEX);
+    expect(eq.latex).toBe(latex);
+    expect(eq.display).toBe(true);
+    expect(eq.anchor).toBe(document.querySelector('.katex-display'));
+  });
+
+  it('DeepSeek: extra wrapper class does not block detection', () => {
+    const latex = "L = \\int_a^b \\|\\mathbf{r}'(t)\\| \\, dt";
+    document.body.innerHTML = katex(latex, true).replace(
+      'class="katex-display"',
+      'class="katex-display ds-markdown-math"',
+    );
+    const eq = extractKatex(document.querySelector('.katex')!)!;
+    expect(eq.latex).toBe(latex);
     expect(eq.display).toBe(true);
     expect(eq.anchor).toBe(document.querySelector('.katex-display'));
   });

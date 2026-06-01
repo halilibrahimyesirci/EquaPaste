@@ -8,14 +8,14 @@ EquaPaste — copy AI math into Word
 
 ## Short description (≤132 chars)
 
-Copy math from ChatGPT, Claude, Gemini & Perplexity and paste it as a native, editable equation in Word, Notion & more. 100% local.
+Copy math from ChatGPT, Claude, Gemini, Perplexity & DeepSeek and paste it as a native, editable Word/Notion equation. 100% local.
 
 ## Detailed description
 
 Tired of copying an equation from ChatGPT, Claude or Gemini only to watch it turn into
 broken LaTeX in Word? EquaPaste fixes that in one click.
 
-Hover any equation in ChatGPT, Claude, Gemini or Perplexity — the whole block highlights and a Copy button
+Hover any equation in ChatGPT, Claude, Gemini, Perplexity or DeepSeek — the whole block highlights and a Copy button
 appears. Click it and the equation lands in your document as a real, editable equation:
 native OfficeMath in Word, a math block in Notion, `$$…$$` in Obsidian/Markdown, and more.
 
@@ -29,7 +29,7 @@ native OfficeMath in Word, a math block in Notion, `$$…$$` in Obsidian/Markdow
 Honest note: Google Docs has no way to accept a native equation from the clipboard, so
 EquaPaste pastes an image and embeds the source LaTeX in the alt text.
 
-Works today on ChatGPT, Claude, Gemini, and Perplexity. Microsoft Copilot is planned.
+Works today on ChatGPT, Claude, Gemini, Perplexity, and DeepSeek. Microsoft Copilot is planned.
 
 ## Category
 
@@ -50,9 +50,9 @@ to their clipboard for pasting into document editors. It does no other work.
 - **scripting** — Runs the in-page copy UI (shadow-DOM pill) on supported pages.
 - **storage** — Stores the user's preferences (default target, theme) locally. No data
   leaves the device.
-- **Host permissions (chatgpt.com, claude.ai, gemini.google.com, perplexity.ai)** — Limited
-  to the AI chat domains where rendered equations appear, so the content script can detect
-  and convert them. No broad `<all_urls>` access is requested.
+- **Host permissions (chatgpt.com, claude.ai, gemini.google.com, perplexity.ai, chat.deepseek.com)** —
+  Limited to the AI chat domains where rendered equations appear, so the content script can
+  detect and convert them. No broad `<all_urls>` access is requested.
 
 ## Data use disclosure
 

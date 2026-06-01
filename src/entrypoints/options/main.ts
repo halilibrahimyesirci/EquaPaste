@@ -10,6 +10,7 @@ const PLATFORM_LABELS: Record<PlatformId, string> = {
   claude: 'Claude',
   gemini: 'Gemini',
   perplexity: 'Perplexity',
+  deepseek: 'DeepSeek',
 };
 // How the "Word" target builds its clipboard payload. MathML is the working
 // default; the others are for troubleshooting on unusual Word builds.

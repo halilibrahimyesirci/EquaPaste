@@ -21,6 +21,7 @@ function currentPlatform(): PlatformId {
   if (host.includes('claude')) return 'claude';
   if (host.includes('gemini')) return 'gemini';
   if (host.includes('perplexity')) return 'perplexity';
+  if (host.includes('deepseek')) return 'deepseek';
   return 'chatgpt';
 }
 
