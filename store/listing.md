@@ -69,16 +69,19 @@ to their clipboard for pasting into document editors. It does no other work.
 
 ## Permission justifications
 
-- **clipboardWrite** — Required to write the converted equation (OMML/MathML/LaTeX/image)
-  to the clipboard when the user clicks Copy.
-- **activeTab** — Acts on the current tab only in response to the user's click or keyboard
-  shortcut; no install-time host warning.
-- **scripting** — Runs the in-page copy UI (shadow-DOM pill) on supported pages.
-- **storage** — Stores the user's preferences (default target, theme) locally. No data
-  leaves the device.
+Only two API permissions are requested (plus host access). `activeTab` and `scripting`
+are **not** used: the content script is declared statically (`content_scripts`) and runs
+under the host permissions below, and keyboard-shortcut commands reach it via host access —
+so neither is needed, and requesting them would be an unnecessary permission.
+
+- **clipboardWrite** — Required to write the converted equation (MathML for Word, LaTeX,
+  MathML, or Unicode text) to the clipboard when the user clicks Copy or presses the
+  shortcut. EquaPaste only writes to the clipboard; it never reads it.
+- **storage** — Stores the user's own preferences locally (default paste target, theme,
+  enabled platforms, Word output format) via `chrome.storage`. No data leaves the device.
 - **Host permissions (chatgpt.com, claude.ai, gemini.google.com, perplexity.ai, chat.deepseek.com)** —
   Limited to the AI chat domains where rendered equations appear, so the content script can
-  detect and convert them. No broad `<all_urls>` access is requested.
+  detect the equation under the cursor and convert it. No broad `<all_urls>` access is requested.
 
 ## Data use disclosure
 

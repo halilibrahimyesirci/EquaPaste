@@ -53,7 +53,9 @@ export default defineConfig({
       'https://perplexity.ai/*',
       'https://chat.deepseek.com/*',
     ],
-    permissions: ['clipboardWrite', 'storage', 'activeTab', 'scripting'],
+    // Minimal: the content script runs via content_scripts + host_permissions
+    // (no chrome.scripting), and all tab messaging uses host access (no activeTab).
+    permissions: ['clipboardWrite', 'storage'],
     commands: {
       'copy-default': {
         suggested_key: { default: 'Alt+Shift+E' },
