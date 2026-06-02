@@ -1,6 +1,6 @@
 {
   "name": "equapaste",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Copy rendered math from AI chats and paste it as native, editable equations into Word, Notion, Obsidian and more. 100% local, open source.",
   "type": "module",
   "license": "MIT",

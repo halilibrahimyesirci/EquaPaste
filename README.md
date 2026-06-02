@@ -4,7 +4,7 @@
 
 [![CI](https://github.com/halilibrahimyesirci/EquaPaste/actions/workflows/ci.yml/badge.svg)](https://github.com/halilibrahimyesirci/EquaPaste/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.2.1-5B6CFF.svg)](package.json)
+[![Version](https://img.shields.io/badge/version-0.2.2-5B6CFF.svg)](package.json)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-34A853.svg)](https://developer.chrome.com/docs/extensions/develop/migrate)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![100% local](https://img.shields.io/badge/100%25-local-1FA463.svg)](PRIVACY.md)
@@ -24,7 +24,7 @@ document as a **native, editable equation** — not a screenshot, not source cod
 
 - **One click, in place** — hover an equation, then click it (or the “Σ Copy to Word” pill). No menus, no setup.
 - **Real, editable results** — native OfficeMath in Word, not a screenshot or raw `\frac{a}{b}`.
-- **Six AI surfaces** — ChatGPT, Claude, Gemini, Perplexity, DeepSeek & Google Search’s AI Mode. Microsoft Copilot is planned.
+- **Six AI surfaces** — ChatGPT, Claude, Gemini, Perplexity, DeepSeek & Google Search’s AI Mode. More are planned.
 - **Many destinations** — Word, Word Online, Notion, Obsidian, GitHub/GitLab Markdown, plus LaTeX, MathML and Unicode text.
 - **100% local** — no servers, no tracking, no account; conversion runs entirely in your browser.
 - **Polished UX** — whole-block hover highlight, light/dark aware, keyboard shortcuts (`Alt+Shift+E` / `Alt+Shift+L`), accessible.
@@ -100,8 +100,8 @@ Hover the equation, click it (or the “Σ Copy to Word” pill), then paste (Ct
 **Why does math from ChatGPT paste into Word as broken LaTeX like `\frac{a}{b}`?**
 The chat only puts the raw LaTeX source on your clipboard. EquaPaste converts it to MathML, which Word turns into a real OfficeMath equation automatically.
 
-**Does it work with Claude, Gemini, Perplexity, DeepSeek and Google AI Mode too?**
-Yes — the same one-click copy works across all six (including the equations Google Search’s AI Mode renders). Microsoft Copilot is planned.
+**Does it work beyond ChatGPT?**
+Yes — the same one-click copy works on every supported AI chat, including the equations Google Search’s AI Mode renders.
 
 **How do I paste an AI equation into Word Online (Word for the web)?**
 Paste it as Plain text, or copy it as LaTeX, paste the LaTeX, select it, and use the top **Insert ▸ Equation** to convert it into a real equation.

@@ -43,7 +43,7 @@ export default defineConfig({
     name: 'EquaPaste',
     // <=132 chars; the pain + the fix, per store listing guidance.
     description:
-      'Copy math from ChatGPT, Claude, Gemini, Perplexity, DeepSeek & Google AI into editable Word/Notion equations. 100% local.',
+      'Copy math from ChatGPT, Claude & more — paste it as an editable Word, Notion or Obsidian equation. 100% local.',
     // MVP host scope: only the AI chat / search-AI surfaces we actually inject into.
     host_permissions: [
       'https://chatgpt.com/*',
