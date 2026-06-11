@@ -14,7 +14,7 @@ AI chats render beautiful math, but the moment you paste it into Word it turns i
 raw LaTeX. EquaPaste fixes that loop: hover any equation, click once, and it lands in your
 document as a **native, editable equation** — not a screenshot, not source code.
 
-[![Available in the Chrome Web Store](https://developer.chrome.com/docs/webstore/images/ChromeWebStore_BadgeWBorder_v2_206x58.png)](https://chromewebstore.google.com/detail/jfombmdhpfpcdkalfiaihmenillefboe?utm_source=item-share-cb)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Available-blue?logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/jfombmdhpfpcdkalfiaihmenillefboe?utm_source=item-share-cb)
 
 <p align="center">
   <img src="docs/screenshots/chatgpt.png" alt="EquaPaste: an equation highlighted in ChatGPT with a “Copy to Word” pill" width="760">
