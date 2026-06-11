@@ -1,6 +1,6 @@
 # Σ EquaPaste
 
-> Copy the math from ChatGPT, Claude, Gemini, Perplexity, DeepSeek & Google AI — and paste it as a **real, editable** equation. 100% local, no tracking.
+> Copy the math from ChatGPT, Claude, Gemini, Perplexity, DeepSeek & Google AI  and paste it as a **real, editable** equation. 100% local, no tracking.
 
 [![CI](https://github.com/halilibrahimyesirci/EquaPaste/actions/workflows/ci.yml/badge.svg)](https://github.com/halilibrahimyesirci/EquaPaste/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -12,33 +12,33 @@
 
 AI chats render beautiful math, but the moment you paste it into Word it turns into broken
 raw LaTeX. EquaPaste fixes that loop: hover any equation, click once, and it lands in your
-document as a **native, editable equation** — not a screenshot, not source code.
+document as a **native, editable equation**  not a screenshot, not source code.
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Available-blue?logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/jfombmdhpfpcdkalfiaihmenillefboe?utm_source=item-share-cb)
 
 <p align="center">
   <img src="docs/screenshots/chatgpt.png" alt="EquaPaste: an equation highlighted in ChatGPT with a “Copy to Word” pill" width="760">
   <br>
-  <em>Hover any equation in ChatGPT — the whole block highlights and a <strong>Σ Copy to Word</strong> pill appears.</em>
+  <em>Hover any equation in ChatGPT  the whole block highlights and a <strong>Σ Copy to Word</strong> pill appears.</em>
 </p>
 
 ## Features
 
-- **One click, in place** — hover an equation, then click it (or the “Σ Copy to Word” pill). No menus, no setup.
-- **Real, editable results** — native OfficeMath in Word, not a screenshot or raw `\frac{a}{b}`.
-- **Six AI surfaces** — ChatGPT, Claude, Gemini, Perplexity, DeepSeek & Google Search’s AI Mode. More are planned.
-- **Many destinations** — Word, Word Online, Notion, Obsidian, GitHub/GitLab Markdown, plus LaTeX, MathML and Unicode text.
-- **100% local** — no servers, no tracking, no account; conversion runs entirely in your browser.
-- **Polished UX** — whole-block hover highlight, light/dark aware, keyboard shortcuts (`Alt+Shift+E` / `Alt+Shift+L`), accessible.
-- **Open source** — MIT, Manifest V3, builds for Chrome, Edge and Firefox.
+- **One click, in place**  hover an equation, then click it (or the “Σ Copy to Word” pill). No menus, no setup.
+- **Real, editable results**  native OfficeMath in Word, not a screenshot or raw `\frac{a}{b}`.
+- **Six AI surfaces**  ChatGPT, Claude, Gemini, Perplexity, DeepSeek & Google Search’s AI Mode. More are planned.
+- **Many destinations**  Word, Word Online, Notion, Obsidian, GitHub/GitLab Markdown, plus LaTeX, MathML and Unicode text.
+- **100% local**  no servers, no tracking, no account; conversion runs entirely in your browser.
+- **Polished UX**  whole-block hover highlight, light/dark aware, keyboard shortcuts (`Alt+Shift+E` / `Alt+Shift+L`), accessible.
+- **Open source**  MIT, Manifest V3, builds for Chrome, Edge and Firefox.
 
 ## How it works
 
-1. Hover (or focus) an equation in ChatGPT, Claude, Gemini, Perplexity, DeepSeek or Google AI Mode — the whole block highlights and a **Copy** pill appears.
+1. Hover (or focus) an equation in ChatGPT, Claude, Gemini, Perplexity, DeepSeek or Google AI Mode  the whole block highlights and a **Copy** pill appears.
 2. Click anywhere on the equation, or the pill, to copy to your default target (Word by default).
 3. Paste. Use the **▾** menu to pick a different format or target.
 
-No setup, no account, no network calls — all conversion happens locally in your browser.
+No setup, no account, no network calls all conversion happens locally in your browser.
 
 ## Screenshots
 
@@ -57,7 +57,7 @@ The same one-click copy works across every supported chat:
   </tr>
 </table>
 
-The first-run onboarding and the toolbar popup — pick a default target, see which chats
+The first-run onboarding and the toolbar popup  pick a default target, see which chats
 are active, and confirm everything stays on your device:
 
 <p align="center">
@@ -73,10 +73,10 @@ are active, and confirm everything stays on your device:
 | **Obsidian / Markdown** (GitHub, GitLab) | `$…$` / `$$…$$`, renders natively | High |
 | **LaTeX / MathML** | Raw source | High |
 | **Word Online** | Best-effort (paste as plain text, or LaTeX → Insert ▸ Equation) | Limited |
-| **Google Docs** | Readable **Unicode text** (x², √, α) — native equations aren't possible via clipboard | Limited |
+| **Google Docs** | Readable **Unicode text** (x², √, α)  native equations aren't possible via clipboard | Limited |
 
 > **Honest note on Google Docs:** Google Docs cannot accept a native equation from the
-> clipboard — there is no API for it. EquaPaste pastes the equation as readable Unicode text
+> clipboard  there is no API for it. EquaPaste pastes the equation as readable Unicode text
 > (x², √, subscripts), falling back to LaTeX for structures with no Unicode form. We will never claim otherwise.
 
 ## Install
@@ -97,13 +97,13 @@ Then load `.output/chrome-mv3` via `chrome://extensions` → *Load unpacked*.
 ## FAQ
 
 **How do I copy an equation from ChatGPT into Word?**
-Hover the equation, click it (or the “Σ Copy to Word” pill), then paste (Ctrl/⌘V) into Word — it arrives as a native, editable equation, not text.
+Hover the equation, click it (or the “Σ Copy to Word” pill), then paste (Ctrl/⌘V) into Word  it arrives as a native, editable equation, not text.
 
 **Why does math from ChatGPT paste into Word as broken LaTeX like `\frac{a}{b}`?**
 The chat only puts the raw LaTeX source on your clipboard. EquaPaste converts it to MathML, which Word turns into a real OfficeMath equation automatically.
 
 **Does it work beyond ChatGPT?**
-Yes — the same one-click copy works on every supported AI chat, including the equations Google Search’s AI Mode renders.
+Yes  the same one-click copy works on every supported AI chat, including the equations Google Search’s AI Mode renders.
 
 **How do I paste an AI equation into Word Online (Word for the web)?**
 Paste it as Plain text, or copy it as LaTeX, paste the LaTeX, select it, and use the top **Insert ▸ Equation** to convert it into a real equation.
@@ -115,10 +115,10 @@ Yes. Notion gets a native math block (type `/math`, then paste); Obsidian and Gi
 EquaPaste pastes it as readable Unicode text (x², √, subscripts). Google Docs can’t accept a native equation from the clipboard.
 
 **Can I copy the equation as LaTeX or MathML instead?**
-Yes — open the **▾** menu on the pill and pick LaTeX, MathML, or plain Unicode text.
+Yes  open the **▾** menu on the pill and pick LaTeX, MathML, or plain Unicode text.
 
 **Is EquaPaste free, private and open source?**
-Yes. It’s MIT-licensed, runs 100% in your browser, and sends nothing anywhere — no servers, no tracking, no account.
+Yes. It’s MIT-licensed, runs 100% in your browser, and sends nothing anywhere  no servers, no tracking, no account.
 
 ## Privacy
 
@@ -140,7 +140,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Issues and PRs welcome.
 
 ## Author
 
-Made by **Halil İbrahim Yesirci** — [@halilibrahimyesirci](https://github.com/halilibrahimyesirci).
+Made by **Halil İbrahim Yesirci**  [@halilibrahimyesirci](https://github.com/halilibrahimyesirci).
 
 ## License
 
